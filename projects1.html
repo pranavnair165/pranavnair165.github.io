@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects - Pranav Nair's Portfolio Projects">
+  <title>Projects - Pranav Nair</title>
+  <link rel="stylesheet" href="css/style1.css">
+  <style>
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    
+    .project-card {
+      background: var(--secondary);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-7px);
+    }
+    
+    .project-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #0a192f 0%, #172a45 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-image::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(100, 255, 218, 0.1);
+      opacity: 0;
+      transition: var(--transition);
+    }
+    
+    .project-card:hover .project-image::after {
+      opacity: 1;
+    }
+    
+    .project-content {
+      padding: 1.5rem;
+    }
+    
+    .project-content h3 {
+      margin: 0 0 1rem 0;
+    }
+    
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    
+    .tech-tag {
+      background: rgba(100, 255, 218, 0.1);
+      color: var(--accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-family: 'SF Mono', monospace;
+    }
+    
+    .project-links {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <h1>PN</h1>
+    <ul>
+      <li><a href="index1.html">Home</a></li>
+      <li><a href="profile1.html">Profile</a></li>
+      <li><a href="cv1.html">CV</a></li>
+      <li><a href="education1.html">Education</a></li>
+      <li><a href="projects1.html">Projects</a></li>
+      <li><a href="contact1.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <p class="subtitle">Here are some of my recent works</p>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image">
+          <i class="fas fa-shopping-cart" style="font-size: 3rem;"></i>
+        </div>
+        <div class="project-content">
+          <h3>E-Commerce Platform</h3>
+          <p>A full-featured online shopping platform with React, Node.js, and MongoDB.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Redux</span>
+          </div>
+          <div class="project-links">
+            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="#"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <i class="fas fa-tasks" style="font-size: 3rem;"></i>
+        </div>
+        <div class="project-content">
+          <h3>Task Management System</h3>
+          <p>Collaborative task management application with real-time updates.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">Firebase</span>
+            <span class="tech-tag">Tailwind CSS</span>
+          </div>
+          <div class="project-links">
+            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="#"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <i class="fas fa-cloud-sun" style="font-size: 3rem;"></i>
+        </div>
+        <div class="project-content">
+          <h3>Weather Dashboard</h3>
+          <p>Real-time weather application with forecasts and alerts.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">API</span>
+            <span class="tech-tag">Bootstrap</span>
+          </div>
+          <div class="project-links">
+            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="#"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Designed & Built by Pranav Nair</p>
+  <div class="social-icons">
+    <a href="https://instagram.com/_._pranavnair" target="blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://linkedin.com/in/pranav-nair-7b4099293" target="blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="mailto:pranavnair165@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://github.com/pranavnair" target="blank">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  <p>&copy; 2025 All Rights Reserved</p>
+</footer>
+</body>
+</html>
