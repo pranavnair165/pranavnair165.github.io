@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Pranav Nair</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <aside class="left-column">
+      <div>
+        <a href="index.html" class="logo">PN</a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+          <span class="sr-only">Menu</span>
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="mobile-nav" id="mobile-nav">
+          <button class="mobile-nav-close" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+          </button>
+          <nav class="mobile-main-nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="profile.html">Profile</a></li>
+              <li><a href="cv.html">CV</a></li>
+              <li><a href="education.html">Education</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="https://instagram.com/_._pranavnair" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://linkedin.com/in/pranav-nair-7b4099293" target="_blank"><i class="fab fa-linkedin"></i>
+          LinkedIn</a>
+        <a href="mailto:pranavnair165@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://github.com/pnair7673" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </aside>
+
+    <main class="right-column">
+      <h1 class="page-title">Featured Projects</h1>
+      <p class="subtitle">A collection of my recent works, showcasing my skills and problem-solving.</p>
+
+      <section class="project-list">
+        <div class="project-item">
+          <img class="project-image" src="images/obr.jpg" alt="An obstacle avoidance robot">
+          <div class="project-info">
+            <h3>Simple Obstacle Avoidance Robot</h3>
+            <p>A simple obstacle avoidance robot using Arduino and ultrasonic sensors.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Arduino</span><span class="tech-tag">Ultrasonic Sensors</span>
+            </div>
+            <div class="project-links">
+              <button class="view-code-btn" data-code-target="#robot-code">View Code &rarr;</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden-code" id="robot-code">
+          <pre><code class="language-cpp">
+// Simple Arduino Obstacle Avoidance Code
+const int trigPin = 9;
+const int echoPin = 10;
+const int motorA1 = 5;
+int echo=7;
+int trig=8;
+float dur,dis;
+int ML1=13;
+int ML2=11;
+int MR1=10;
+int MR2=2;
+int ENA=5;
+int ENB=6;
+int speed=150;
+int buzzer=3;
+
+void setup(){
+  pinMode(trig,OUTPUT);
+  pinMode(echo,INPUT);
+  Serial.begin(9600);
+}
+void ultrasonic(){
+  digitalWrite(trig,LOW);
+  delay(10);
+  digitalWrite(trig,HIGH);
+  delay(10);
+  digitalWrite(trig,LOW);
+  dur=pulseIn(echo,HIGH);
+  dis=(dur*0.034)/2;
+}
+void forward(){
+  analogWrite(ENA,speed);
+  analogWrite(ENB,speed);
+  digitalWrite(ML1,HIGH);
+  digitalWrite(ML2,LOW);
+  digitalWrite(MR1,HIGH);
+  digitalWrite(MR2,LOW);
+}
+void stop(){
+  analogWrite(ENA,LOW);
+  analogWrite(ENB,LOW);
+  digitalWrite(ML1,LOW);
+  digitalWrite(ML2,LOW);
+  digitalWrite(MR1,LOW);
+  digitalWrite(MR2,LOW);
+}
+void backward(){
+  analogWrite(ENA,speed);
+  analogWrite(ENB,speed);
+  digitalWrite(ML1,LOW);
+  digitalWrite(ML2,HIGH);
+  digitalWrite(MR1,LOW);
+  digitalWrite(MR2,HIGH);
+}
+void loop(){
+  ultrasonic();
+  if(dis<15){
+    stop();
+    backward();
+    tone(buzzer,500);
+  }else{
+    forward();
+    noTone(buzzer);
+  }
+  Serial.println(dis);
+}
+    </code></pre>
+        </div>
+
+        <div class="project-item">
+          <img class="project-image" src="images/Traffic.png" alt="Smart Traffic Control System">
+          <div class="project-info">
+            <h3>Smart Traffic Control System</h3>
+            <p>An intelligent, decentralized traffic signal control system using cooperative multi-agent AI.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Agentic AI</span><span class="tech-tag">Multi-agent AI</span><span
+                class="tech-tag">AI</span>
+            </div>
+            <div class="project-links">
+              <a href="https://colab.research.google.com/drive/1ouzZ9bbeqMtP7qSht6lQdECNAzdsG66p?usp=sharing" target="_blank">View Code &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <p class="copyright">&copy; 2025 Pranav Nair, All Rights Reserved</p>
+    </main>
+  </div>
+  <script src="script.js"></script>
+  <div class="modal" id="code-modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div id="modal-code-content"></div>
+    </div>
+  </div>
+</body>
+
+</html>

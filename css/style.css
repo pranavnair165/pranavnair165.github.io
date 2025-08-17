@@ -1,0 +1,556 @@
+/* --- Font Imports --- */
+@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@600&family=PT+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* --- Root Variables --- */
+:root {
+  --background: #F4F1EA;
+  --text-main: #1D1D1F;
+  --accent: #0052FF;
+  --border-color: #d1d1d1;
+}
+
+/* --- Global Resets & Base Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-main);
+  font-family: 'PT Serif', serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Clash Display', sans-serif;
+  line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.25rem; }
+
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style-position: inside;
+  padding-left: 1rem;
+}
+
+/* --- Main Layout Structure --- */
+.page-wrapper {
+  display: flex;
+}
+
+.left-column {
+  width: 220px;
+  position: fixed;
+  height: 100vh;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--border-color);
+  background-color: var(--background);
+  z-index: 10;
+}
+
+.right-column {
+  margin-left: 220px;
+  width: calc(100% - 220px);
+  padding: 4rem;
+}
+
+/* --- Left Column: Navigation, Logo & Socials --- */
+.logo {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 2.5rem;
+  color: var(--text-main);
+}
+
+.main-nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.main-nav ul li {
+  margin-bottom: 1.5rem;
+}
+
+.main-nav ul li a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1rem;
+  color: var(--text-main);
+  transition: none;
+}
+
+.main-nav ul li a:hover {
+  background-color: var(--accent);
+  color: var(--background);
+  padding: 4px 6px;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* --- Right Column: General Content Styles --- */
+section {
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--border-color);
+}
+section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.page-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  max-width: 60ch;
+  margin-top: -1rem;
+  margin-bottom: 3rem;
+}
+
+.content-box {
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+}
+
+.copyright {
+    margin-top: 4rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #888;
+}
+
+/* --- Page-Specific Styles --- */
+
+/* Home Page */
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.hero-profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    transform: scale(1.05);
+    border-radius: 50%;
+}
+#greeting {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.intro-text {
+    font-size: 1.25rem;
+    max-width: 50ch;
+}
+
+/* --- Articles & Weather Sections --- */
+#rss-feed {
+    list-style: none;
+    padding: 0;
+}
+#rss-feed li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+#rss-feed li:first-child { 
+    padding-top: 0; 
+}
+#rss-feed li:last-child { 
+    border-bottom: none; 
+    padding-bottom: 0; 
+}
+
+/* Styles for the number (01, 02, etc.) */
+.article-number {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.25rem;
+    color: #b0b0b0; /* A lighter, less prominent color */
+    padding-top: 0.25rem;
+}
+
+/* Styles for the main article content */
+.article-title {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--text-main);
+    display: block;
+    margin-bottom: 0.75rem;
+}
+.article-title:hover {
+    color: var(--accent);
+}
+
+.article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Weather Input Styles */
+.weather-input {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: center; /* This new line fixes the alignment */
+}
+
+#cityInput {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    background: var(--background);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+}
+.button {
+    background: var(--accent);
+    color: var(--background);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    cursor: pointer;
+}
+#weatherResult img {
+    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.3));
+}
+
+/* Profile, CV, Education Pages */
+.content-grid {
+  display: grid;
+  gap: 3rem;
+}
+.cv-item h4, .qualification h4 {
+  font-family: 'PT Serif', serif;
+  font-weight: 700;
+}
+/* Style for certification links to match regular text */
+#certifications ul li a {
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+#certifications ul li a:hover {
+    color: var(--accent); /* Turns blue on hover */
+    background-color: transparent; /* Removes the blocky hover effect */
+}
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.tech-category {
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+}
+
+/* --- Projects Page --- */
+.project-list {
+    display: grid;
+    gap: 0; /* The gap is now on the project-item itself */
+}
+.project-item {
+    display: flex;
+    align-items: center; /* Vertically aligns image and text */
+    gap: 2.5rem; /* Space between image and text */
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.project-item:last-child {
+    border-bottom: none;
+}
+.project-image {
+    width: 320px;
+    height: 240px;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform; 
+}
+/* Makes the image scale up when hovering over the entire project item */
+.project-item:hover .project-image {
+    transform: scale(1.03);
+}
+.project-info h3 {
+    margin-bottom: 1rem;
+}
+.tech-tags {
+    margin: 1.5rem 0;
+}
+.tech-tag {
+    display: inline-block; border: 1px solid var(--border-color);
+    padding: 4px 10px; font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem; margin-right: 0.5rem;
+}
+.project-links a {
+    font-family: 'IBM Plex Mono', monospace;
+    margin-right: 1.5rem; text-decoration: underline;
+}
+
+/* Contact Page */
+.contact-container {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+}
+.form-group { margin-bottom: 1.5rem; }
+.form-group label {
+    display: block; margin-bottom: 0.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+}
+.form-group input, .form-group textarea {
+    width: 100%; padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--background); font-size: 1rem;
+}
+.contact-info p { display: flex; align-items: center; gap: 0.75rem; }
+.contact-info i { width: 20px; text-align: center; color: var(--accent); }
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .page-wrapper { flex-direction: column; }
+  .left-column {
+    position: relative; width: 100%; height: auto;
+    border-right: none; border-bottom: 1px solid var(--border-color);
+    flex-direction: row; align-items: center; padding: 1.5rem;
+  }
+  .main-nav, .social-links { display: none; } /* Simplified for mobile */
+  .right-column {
+    margin-left: 0; width: 100%; padding: 2rem;
+  }
+  h1 { font-size: 2.5rem; }
+  .hero-content { flex-direction: column; text-align: center; }
+  .contact-container { grid-template-columns: 1fr; }
+  .project-item {
+    flex-direction: column; /* Stacks image on top of text */
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .project-image {
+    width: 100%; /* Makes image full-width on mobile */
+    height: 250px;
+  }
+}
+/* --- START: New Mobile Navigation Styles --- */
+
+/* Hamburger Button */
+.mobile-nav-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-main);
+    z-index: 1000;
+}
+
+.sr-only { /* Hides "Menu" text visually but keeps it for screen readers */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Mobile Menu Overlay */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%); /* Start off-screen */
+    z-index: 999;
+}
+
+.mobile-nav-active .mobile-nav {
+    transform: translateX(0%); /* Slide in when active */
+}
+
+.mobile-nav-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+.mobile-main-nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.mobile-main-nav ul li a {
+    display: block;
+    padding: 1rem;
+    font-family: 'Clash Display', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text-main);
+}
+/* --- END: New Mobile Navigation Styles --- */
+
+/* --- START: Modal Styles --- */
+
+/* The hidden overlay */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+/* The popup box */
+.modal-content {
+    background-color: var(--background);
+    margin: 10% auto;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+}
+
+/* The close button (X) */
+.modal-close {
+    color: #aaa;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: var(--text-main);
+}
+
+/* Styles for the code block inside the modal */
+#modal-code-content pre {
+    background-color: #fdfdfd;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    max-height: 50vh; /* Makes the code block scrollable */
+    overflow: auto;
+}
+#modal-code-content code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Class to hide the code snippets on the page */
+.hidden-code {
+    display: none;
+}
+
+/* Make the view code link look like a button */
+.view-code-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    text-decoration: underline;
+    color: var(--accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem; /* Adjust if needed */
+}
+
+/* --- END: Modal Styles --- */
+
+/* --- MODIFIED: Responsive Section --- */
+@media (max-width: 900px) {
+  .page-wrapper { flex-direction: column; }
+  .left-column {
+    position: relative; width: 100%; height: auto;
+    border-right: none; border-bottom: 1px solid var(--border-color);
+    flex-direction: row; align-items: center; padding: 1.5rem;
+  }
+  
+  /* Hide desktop nav and social links, show mobile toggle button */
+  .main-nav, .social-links { display: none; }
+  .mobile-nav-toggle { display: block; }
+
+  .right-column {
+    margin-left: 0; width: 100%; padding: 2rem;
+  }
+  h1 { font-size: 2.5rem; }
+  .hero-content { flex-direction: column; text-align: center; }
+  .contact-container { grid-template-columns: 1fr; }
+}
+
+/* Add this new rule for small screens */
+@media (max-width: 500px) {
+  .weather-input {
+    flex-direction: column;
+    align-items: stretch; /* Makes items fill the width */
+  }
+
+  .weather-input #cityInput,
+  .weather-input .button {
+    width: 100%; /* Ensure both take up the full width */
+  }
+}
