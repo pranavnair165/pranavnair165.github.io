@@ -2,7 +2,7 @@
 
 This is the repository for my personal portfolio website, designed to showcase my skills, projects, and professional background. The site features a unique, modern design inspired by brutalism and editorial print layouts.
 
-**Live Demo:** [https://your-github-username.github.io](https://your-github-username.github.io)
+**Live Demo:** [https://pranavnair165.github.io](https://pranavnair165.github.io)
 
 ---
 ## Website Content and Structure
@@ -22,7 +22,7 @@ The site is organized into the following pages:
 
 ### Dev.to Feed Integration
 The "Latest Articles" section on the homepage is populated dynamically.
-* The `script1.js` file uses the JavaScript **`fetch()`** method to make an API call to the Dev.to API endpoint (`https://dev.to/api/articles`).
+* The `script.js` file uses the JavaScript **`fetch()`** method to make an API call to the Dev.to API endpoint (`https://dev.to/api/articles`).
 * It requests the 5 latest articles from the community.
 * The returned JSON data is then parsed, and for each article, a new list item with a clickable link is dynamically created and inserted into the DOM. This ensures the content is always fresh without requiring a page reload.
 
