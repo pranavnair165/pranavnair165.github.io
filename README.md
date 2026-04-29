@@ -2,7 +2,7 @@
 
 This is the repository for my personal portfolio website, designed to showcase my skills, projects, and professional background. The site features a unique, modern design inspired by brutalism and editorial print layouts.
 
-**Live Demo:** [https://pranavnair165.github.io](https://pranavnair165.github.io)
+**Website:** [https://pranavnair165.github.io](https://pranavnair165.github.io)
 
 ---
 ## Website Content and Structure
