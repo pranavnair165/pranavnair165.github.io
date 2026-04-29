@@ -39,11 +39,3 @@ The "Weather Check" feature provides live weather data.
 * The request includes the city name and a unique API key. A cache-busting timestamp is added to ensure fresh data is fetched every time.
 * The script then parses the JSON response and dynamically updates the DOM to display the city name, temperature, weather description, and a corresponding weather icon.
 * The implementation also includes error handling to inform the user if a city is not found or if a network issue occurs.
-
----
-## Local Setup
-
-To run this project on your local machine:
-1.  Clone the repository: `git clone https://github.com/your-github-username/your-repository-name.git`
-2.  Navigate into the project directory: `cd your-repository-name`
-3.  Open the `index.html` file in your browser.
